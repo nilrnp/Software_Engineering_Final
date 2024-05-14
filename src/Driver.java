@@ -1,4 +1,3 @@
-// Represents a driver
 import java.util.ArrayList;
 import java.util.List;
 class Driver extends User {
@@ -19,6 +18,4 @@ class Driver extends User {
         return orders;
     }
 
-    // Other driver methods
-    // You can add methods for updating shifts, managing orders, etc.
 }

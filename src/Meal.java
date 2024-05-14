@@ -1,5 +1,4 @@
-// Represents a meal
-import java.util.ArrayList;
+// Factory & Design Pattern
 import java.util.List;
 class Meal {
     private List<String> toppings;

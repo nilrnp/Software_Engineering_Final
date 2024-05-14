@@ -1,5 +1,4 @@
-// Represents an order
-import java.util.ArrayList;
+// Observer Pattern
 import java.util.List;
 class Order {
     Restaurant restaurant;
@@ -29,6 +28,4 @@ class Order {
         this.deliveredTime = deliveredTime;
     }
 
-    // Other order methods
-    // You can add methods for calculating total cost, modifying items, etc.
 }
