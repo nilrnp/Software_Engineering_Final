@@ -1,16 +1,14 @@
-// Represents a restaurant
-import java.util.ArrayList;
 import java.util.List;
 class Restaurant extends User {
     private List<Meal> menu;
     private List<String> operatingHours;
-    private CuisineType cuisineType;
+    private FoodType foodType;
 
-    public Restaurant(String name, String address, String county, List<Meal> menu, List<String> operatingHours, CuisineType cuisineType) {
+    public Restaurant(String name, String address, String county, List<Meal> menu, List<String> operatingHours, FoodType foodType) {
         super(name, address, county);
         this.menu = menu;
         this.operatingHours = operatingHours;
-        this.cuisineType = cuisineType;
+        this.foodType = foodType;
     }
 
     public List<Meal> getMenu() {
@@ -21,10 +19,8 @@ class Restaurant extends User {
         return operatingHours;
     }
 
-    public CuisineType getCuisineType() {
-        return cuisineType;
+    public FoodType getCuisineType() {
+        return foodType;
     }
 
-    // Other restaurant methods
-    // You can add methods for adding/removing items from the menu, checking operating hours, etc.
 }

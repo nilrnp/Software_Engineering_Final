@@ -1,4 +1,3 @@
-// Represents a customer
 import java.util.ArrayList;
 import java.util.List;
 class Customer extends User {
@@ -19,6 +18,4 @@ class Customer extends User {
         return dietaryRestrictions;
     }
 
-    // Other customer methods
-    // You can add methods for placing orders, updating dietary restrictions, etc.
 }
