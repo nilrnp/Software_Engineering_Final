@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 class Driver extends User {
-    private List<String> shifts;
+    private ShiftType shift;
     private List<Order> orders;
 
-    public Driver(String name, String address, String county, List<String> shifts) {
+    public Driver(String name, String address, String county, ShiftType shift) {
         super(name, address, county);
-        this.shifts = shifts;
+        this.shift = shift;
         this.orders = new ArrayList<>();
     }
 
-    public List<String> getShifts() {
-        return shifts;
+    public ShiftType getShift() {
+        return shift;
     }
 
     public List<Order> getOrders() {
