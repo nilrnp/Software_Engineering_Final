@@ -2,8 +2,9 @@
 import java.util.List;
 class Order {
     Restaurant restaurant;
-    private Customer customer;
+    Customer customer;
     Driver driver;
+
     List<Meal> items;
     String orderCreationTime;
     String orderPickUpTime;
@@ -28,4 +29,7 @@ class Order {
         this.deliveredTime = deliveredTime;
     }
 
+    public List<Meal> getItems() {
+        return items;
+    }
 }
