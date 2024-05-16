@@ -64,7 +64,7 @@ public class CPPFoodDelivery {
         Customer customer1 = new Customer("Customer Name", "Customer Address", "Customer County");
 
         // Creating a driver
-        Driver driver1 = new Driver("Driver Name", "Driver Address", "Driver County", EveningShift);
+        Driver driver1 = new Driver("Driver Name", "Driver Address", "Driver County", 0);
 
         // Creating an order
         Order order1 = new Order(italianRestaurant, customer1, List.of(italianMeal1, italianMeal2), "10:00 AM");
