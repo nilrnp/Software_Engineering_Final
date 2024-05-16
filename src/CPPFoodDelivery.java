@@ -3,33 +3,33 @@ public class CPPFoodDelivery {
 
     public static void printOrderInformation(Order order)
     {
-        System.out.println("Customer Information: ");
-        System.out.println("Name - " + order.customer.name);
-        System.out.println("Address - " + order.customer.address);
-        System.out.println("County - " + order.customer.county);
+        System.out.println(order.customer.name + "'s Order");
+        System.out.println("-------------------------------------------------------");
 
-        System.out.println("\nDriver Information: ");
-        System.out.println("Name - " + order.driver.name);
-        System.out.println("Address - " + order.driver.address);
-        System.out.println("County - " + order.driver.county);
-        System.out.println("Shift - " + order.driver.getShift());
+        System.out.println("\nCustomer Information: ");
+        System.out.println("Name -> " + order.customer.name);
+        System.out.println("Address -> " + order.customer.address);
+        System.out.println("Dietary Restrictions -> " + order.customer.getDietaryRestrictions());
 
         System.out.println("\nPick Up Details: ");
-        System.out.println("Restaurant - " + order.restaurant.name);
-        System.out.println("Restaurant Address - " + order.restaurant.address);
-        System.out.println("Restaurant County - " + order.restaurant.county);
+        System.out.println("Restaurant -> " + order.restaurant.name);
+        System.out.println("Restaurant Address -> " + order.restaurant.address);
+
+        System.out.println("\nDriver Information: ");
+        System.out.println("Name -> " + order.driver.name);
+        System.out.println("Shift -> " + order.driver.getShift());
 
         System.out.println("\nItems: ");
-        for (Meal meal : order.items) {
-            System.out.println("- " + meal.getName() + " + " + meal.getToppings());
-        }
+        System.out.println(order.items);
 
         System.out.println("\nOrder Information: ");
-        System.out.println("Order Creation Time - " + order.orderCreationTime);
-        System.out.println("Order Pickup Time - " + order.orderPickUpTime);
-        System.out.println("Delivered Time - " + order.deliveredTime);
+        System.out.println("Order Creation Time -> " + order.orderCreationTime);
+        System.out.println("Order Pickup Time -> " + order.orderPickUpTime);
+        System.out.println("Order Delivered Time -> " + order.deliveredTime);
     }
     public static void main(String[] args) {
+        // TO DO, add/show toppings and diet restriction
+
         // Creating meals for each restaurant type
         Meal italianMeal1 = MealFactory.createMeal("Pizza", 15, 30, 20);
         Meal italianMeal2 = MealFactory.createMeal("Salad", 5, 10, 5);
@@ -51,13 +51,13 @@ public class CPPFoodDelivery {
 
         // Creating restaurants of 4 different types
         Restaurant italianRestaurant = new Restaurant("Restaurant Name", "Restaurant Address", "Restaurant County",
-                italianMenu, List.of("8AM - 10PM"), FoodType.ITALIAN);
+                List.of("Toppings Go Here"), italianMenu, List.of("8AM - 10PM"), FoodType.ITALIAN);
         Restaurant mexicanRestaurant = new Restaurant("Restaurant Name", "Restaurant Address", "Restaurant County",
-                mexicanMenu, List.of("8AM - 10PM"), FoodType.MEXICAN);
+                List.of("Toppings Go Here"), mexicanMenu, List.of("12PM - 12AM"), FoodType.MEXICAN);
         Restaurant americanRestaurant = new Restaurant("Restaurant Name", "Restaurant Address", "Restaurant County",
-                americanMenu, List.of("8AM - 10PM"), FoodType.AMERICAN);
+                List.of("Toppings Go Here"), americanMenu, List.of("10AM - 9PM"), FoodType.AMERICAN);
         Restaurant japaneseRestaurant = new Restaurant("Restaurant Name", "Restaurant Address", "Restaurant County",
-                japaneseMenu, List.of("8AM - 10PM"), FoodType.JAPANESE);
+                List.of("Toppings Go Here"), japaneseMenu, List.of("12PM - 6PM"), FoodType.JAPANESE);
 
         // Creating a customer
         Customer customer1 = new Customer("Customer Name", "Customer Address", "Customer County");
@@ -67,7 +67,6 @@ public class CPPFoodDelivery {
 
         // Creating an order
         Order order1 = new Order(italianRestaurant, customer1, List.of(italianMeal1, italianMeal2), "10:00 AM");
-        order1.getItems().get(0).addTopping("Extra Cheese");
         order1.setDriver(driver1);
         order1.setOrderPickUpTime("10:30 AM");
         order1.setDeliveredTime("11:00 AM");

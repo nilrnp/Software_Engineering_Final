@@ -5,8 +5,8 @@ class Restaurant extends User {
     private List<String> operatingHours;
     private FoodType foodType;
 
-    public Restaurant(String name, String address, String county, List<String> toppings, List<MealComponent> mealList,
-            List<String> operatingHours, FoodType foodType) {
+    public Restaurant(String name, String address, String county, List<String> toppings, List<Meal> mealList,
+                      List<String> operatingHours, FoodType foodType) {
         super(name, address, county);
         this.menu = new Menu(toppings, mealList);
         this.operatingHours = operatingHours;
@@ -17,7 +17,7 @@ class Restaurant extends User {
         return menu.getToppingList();
     }
 
-    public List<MealComponent> getMeals() {
+    public List<Meal> getMeals() {
         return menu.getMealList();
     }
 

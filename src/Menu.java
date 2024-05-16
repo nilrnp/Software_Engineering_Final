@@ -2,9 +2,9 @@ import java.util.List;
 
 public class Menu {
     private List<String> toppingList;
-    private List<MealComponent> mealList;
+    private List<Meal> mealList;
 
-    public Menu(List<String> toppingList, List<MealComponent> mealList) {
+    public Menu(List<String> toppingList, List<Meal> mealList) {
         this.toppingList = toppingList;
         this.mealList = mealList;
     }
@@ -13,7 +13,7 @@ public class Menu {
         return toppingList;
     }
 
-    public List<MealComponent> getMealList() {
+    public List<Meal> getMealList() {
         return mealList;
     }
 

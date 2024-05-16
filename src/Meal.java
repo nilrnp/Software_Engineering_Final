@@ -3,7 +3,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Meal implements MealComponent {
+class Meal extends MealFactory {
     private String name;
     private int fats;
     private int carbs;

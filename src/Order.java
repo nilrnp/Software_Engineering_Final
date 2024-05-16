@@ -7,12 +7,12 @@ class Order {
     Customer customer;
     Driver driver;
 
-    List<MealComponent> items;
+    List<Meal> items;
     String orderCreationTime;
     String orderPickUpTime;
     String deliveredTime;
 
-    public Order(Restaurant restaurant, Customer customer, List<MealComponent> items, String orderCreationTime) {
+    public Order(Restaurant restaurant, Customer customer, List<Meal> items, String orderCreationTime) {
         this.restaurant = restaurant;
         this.customer = customer;
         this.items = items;
@@ -31,14 +31,14 @@ class Order {
         this.deliveredTime = deliveredTime;
     }
 
-    public List<MealComponent> getItems() {
+    public List<Meal> getItems() {
         return items;
     }
 
     public String totalCost() {
         String output = "";
         double sum = 0;
-        for (MealComponent i : items) {
+        for (Meal i : items) {
             output += String.format("\n%s", i.itemDetail());
             sum += i.getCost();
         }
