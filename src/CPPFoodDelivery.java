@@ -1,6 +1,5 @@
 import java.util.List;
 public class CPPFoodDelivery {
-    public static ShiftType MorningShift, EveningShift, EarlyMorningShift;
 
     public static void printOrderInformation(Order order)
     {
