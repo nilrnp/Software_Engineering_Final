@@ -1,16 +1,18 @@
+
 // Observer Pattern
 import java.util.List;
+
 class Order {
     Restaurant restaurant;
     Customer customer;
     Driver driver;
 
-    List<Meal> items;
+    List<MealComponent> items;
     String orderCreationTime;
     String orderPickUpTime;
     String deliveredTime;
 
-    public Order(Restaurant restaurant, Customer customer, List<Meal> items, String orderCreationTime) {
+    public Order(Restaurant restaurant, Customer customer, List<MealComponent> items, String orderCreationTime) {
         this.restaurant = restaurant;
         this.customer = customer;
         this.items = items;
@@ -29,7 +31,19 @@ class Order {
         this.deliveredTime = deliveredTime;
     }
 
-    public List<Meal> getItems() {
+    public List<MealComponent> getItems() {
         return items;
+    }
+
+    public String totalCost() {
+        String output = "";
+        double sum = 0;
+        for (MealComponent i : items) {
+            output += String.format("\n%s", i.itemDetail());
+            sum += i.getCost();
+        }
+        output += String.format("\n%20s %10.2f", "Total Cost:", sum);
+
+        return output;
     }
 }
