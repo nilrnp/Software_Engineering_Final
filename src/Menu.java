@@ -2,18 +2,17 @@ import java.util.List;
 
 public class Menu {
     private List<String> toppingList;
-    private List<Meal> mealList;
+    private List<String> mealList = List.of("No Restriction Meal", "Vegan Meal", "Paleo Meal", "Nut Allergy Meal");
 
-    public Menu(List<String> toppingList, List<Meal> mealList) {
+    public Menu(List<String> toppingList) {
         this.toppingList = toppingList;
-        this.mealList = mealList;
     }
 
     public List<String> getToppingList() {
         return toppingList;
     }
 
-    public List<Meal> getMealList() {
+    public List<String> getMealList() {
         return mealList;
     }
 
