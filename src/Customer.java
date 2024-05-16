@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 class Customer extends User {
     private List<Order> orders;
     private List<String> dietaryRestrictions;
