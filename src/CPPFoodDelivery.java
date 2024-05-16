@@ -69,10 +69,28 @@ public class CPPFoodDelivery {
                 japaneseRestaurant.printMenu();
 
                 // Creating a customer
-                Customer customer1 = new Customer("Customer Name", "Customer Address", "Customer County");
+                Customer customer1 = new Customer("Alice Johnson", "101 Main St", "Los Angeles County");
+                Customer customer2 = new Customer("Bob Smith", "202 Maple Ave", "San Diego County");
+                Customer customer3 = new Customer("Charlie Brown", "303 Oak Dr", "Orange County");
+                Customer customer4 = new Customer("Diana Clark", "404 Pine Ln", "Los Angeles County");
+                Customer customer5 = new Customer("Eva Martinez", "505 Cedar St", "San Diego County");
+                Customer customer6 = new Customer("Frank Wilson", "606 Birch Rd", "Orange County");
+                Customer customer7 = new Customer("Grace Taylor", "707 Elm St", "Los Angeles County");
+                Customer customer8 = new Customer("Henry Davis", "808 Spruce Blvd", "Orange County");
+                Customer customer9 = new Customer("Isabel Adams", "909 Oakwood Ave", "San Diego County");
+                Customer customer10 = new Customer("Jackie Roberts", "1010 Sunset Blvd", "Los Angeles County");
+
 
                 // Creating a driver
-                Driver driver1 = new Driver("Driver Name", "Driver Address", "Driver County", 0);
+                Driver driver1 = new Driver("John Smith", "101 Main St", "Los Angeles County", 0);
+                Driver driver2 = new Driver("Jane Doe", "202 Maple Ave", "San Diego County", 1);
+                Driver driver3 = new Driver("Mike Johnson", "303 Oak Dr", "Orange County", 2);
+                Driver driver4 = new Driver("Emily Davis", "404 Pine Ln", "Los Angeles County", 0);
+                Driver driver5 = new Driver("Chris Wilson", "505 Cedar St", "San Diego County", 1);
+                Driver driver6 = new Driver("Lisa Wilson", "606 Birch Rd", "Orange County", 2);
+                Driver driver7 = new Driver("Tom Clark", "707 Elm St", "Los Angeles County", 0);
+                Driver driver8 = new Driver("Susan Martinez", "808 Spruce Blvd", "Orange County", 1);
+
 
                 // Creating an order
                 Order order1 = new Order(italianRestaurant, customer1, "10:00 AM");
