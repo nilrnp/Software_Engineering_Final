@@ -18,12 +18,27 @@ class Restaurant extends User {
     }
 
     public void printMenu() {
+        String separator = "+-------------------------------+";
+        String format = "| %-29s |%n";
+
         System.out.printf("----- %s Menu -----\n", name);
-        System.out.println("Meals Options : ");
-        System.out.println(menu.getMealList());
-        System.out.println("Topping Options : ");
-        System.out.println(menu.getToppingList());
+
+        System.out.println("Meals Options:");
+        System.out.println(separator);
+        for (String meal : menu.getMealList()) {
+            System.out.printf(format, meal);
+        }
+        System.out.println(separator);
+
+        System.out.println("Topping Options:");
+        System.out.println(separator);
+        for (String topping : menu.getToppingList()) {
+            System.out.printf(format, topping);
+        }
+        System.out.println(separator);
+        System.out.println();
     }
+
 
     public List<String> getOperatingHours() {
         return operatingHours;

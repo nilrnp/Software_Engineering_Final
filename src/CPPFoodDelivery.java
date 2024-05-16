@@ -3,46 +3,63 @@ import java.util.List;
 public class CPPFoodDelivery {
 
         public static void printOrderInformation(Order order) {
-                System.out.println(order.customer.name + "'s Order");
-                System.out.println("-------------------------------------------------------");
+                String separator = "+-------------------------------+--------------------------------+";
+                String format = "| %-29s | %-30s |%n";
 
-                System.out.println("\nCustomer Information: ");
-                System.out.println("Name -> " + order.customer.name);
-                System.out.println("Address -> " + order.customer.address);
-                System.out.println("Dietary Restrictions -> " + order.customer.getDietaryRestrictions());
+                System.out.printf("%-30s%-1s\n", order.customer.name + "'s Order", "");
+                System.out.println(separator);
 
-                System.out.println("\nPick Up Details: ");
-                System.out.println("Restaurant -> " + order.restaurant.name);
-                System.out.println("Restaurant Address -> " + order.restaurant.address);
+                System.out.printf(format, "Customer Information", "");
+                System.out.println(separator);
+                System.out.printf(format, "Name", order.customer.name);
+                System.out.printf(format, "Address", order.customer.address);
+                System.out.printf(format, "County", order.customer.county);
+                System.out.println(separator);
 
-                System.out.println("\nDriver Information: ");
-                System.out.println("Name -> " + order.driver.name);
-                System.out.println("Shift -> " + order.driver.getShift());
+                System.out.printf(format, "Restaurant Information", "");
+                System.out.println(separator);
+                System.out.printf(format, "Name", order.restaurant.name);
+                System.out.printf(format, "Address", order.restaurant.address);
+                System.out.printf(format, "County", order.restaurant.county);
+                System.out.println(separator);
 
-                System.out.println("\nItems: ");
-                System.out.println(order.totalCost());
+                System.out.printf(format, "Driver Information", "");
+                System.out.println(separator);
+                System.out.printf(format, "Name", order.driver.name);
+                System.out.printf(format, "County", order.driver.county);
+                System.out.printf(format, "Shift", order.driver.getShift());
+                System.out.println(separator);
 
-                System.out.println("\nOrder Information: ");
-                System.out.println("Order Creation Time -> " + order.orderCreationTime);
-                System.out.println("Order Pickup Time -> " + order.orderPickUpTime);
-                System.out.println("Order Delivered Time -> " + order.deliveredTime);
+                System.out.printf(format, "Items", "");
+                System.out.println(separator);
+                System.out.printf(format, "Total Cost", order.totalCost());
+                System.out.println(separator);
+
+                System.out.printf(format, "Order Information", "");
+                System.out.println(separator);
+                System.out.printf(format, "Creation Time", order.orderCreationTime);
+                System.out.printf(format, "Pickup Time", order.orderPickUpTime);
+                System.out.printf(format, "Delivered Time", order.deliveredTime);
+                System.out.println(separator);
         }
+
+
 
         public static void main(String[] args) {
                 // TO DO, add/show toppings and diet restriction
 
                 // Creating restaurants of 4 different types
-                Restaurant italianRestaurant = new Restaurant("Restaurant Name", "Restaurant Address",
-                                "Restaurant County", List.of("Marinara Sauce", "Cheese", "Meat Ball"),
+                Restaurant italianRestaurant = new Restaurant("Bella Italia", "1234 Tuscany Ave",
+                                "Los Angeles County", List.of("Marinara Sauce", "Cheese", "Meat Ball"),
                                 List.of("8AM - 10PM"), FoodType.ITALIAN);
-                Restaurant mexicanRestaurant = new Restaurant("Restaurant Name", "Restaurant Address",
-                                "Restaurant County", List.of("Black Bean", "Limes", "Chips"), List.of("12PM - 12AM"),
+                Restaurant mexicanRestaurant = new Restaurant("El Camino Real", "5678 Fiesta Blvd",
+                                "San Diego County", List.of("Black Beans", "Limes", "Chips"), List.of("12PM - 12AM"),
                                 FoodType.MEXICAN);
-                Restaurant americanRestaurant = new Restaurant("Restaurant Name", "Restaurant Address",
-                                "Restaurant County", List.of("Cheese", "French Fries", "Bacon"), List.of("10AM - 9PM"),
+                Restaurant americanRestaurant = new Restaurant("The Patriot Grill", "3456 Freedom St",
+                                "Los Angeles County", List.of("Extra Cheese", "French Fries", "Bacon"), List.of("10AM - 9PM"),
                                 FoodType.AMERICAN);
-                Restaurant japaneseRestaurant = new Restaurant("Restaurant Name", "Restaurant Address",
-                                "Restaurant County", List.of("Mayonnaise", "Corn", "Salmon"), List.of("12PM - 6PM"),
+                Restaurant japaneseRestaurant = new Restaurant("Sakura Garden", "9102 Cherry Blossom Ln",
+                                "Orange County", List.of("Mayonnaise", "Corn", "Salmon"), List.of("12PM - 6PM"),
                                 FoodType.JAPANESE);
 
                 // Print Menus
