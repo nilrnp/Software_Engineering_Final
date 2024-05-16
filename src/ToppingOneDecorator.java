@@ -1,9 +1,9 @@
 public class ToppingOneDecorator implements MealComponent {
     private String toppingName;
-    private Meal decorated;
-    private double cost = 1;
+    private MealComponent decorated;
+    private double cost = 3;
 
-    public ToppingOneDecorator(Meal plainMeal, Restaurant r) {
+    public ToppingOneDecorator(MealComponent plainMeal, Restaurant r) {
         this.decorated = plainMeal;
         this.toppingName = r.getToppings().get(0);
     }
