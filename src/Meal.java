@@ -1,21 +1,16 @@
 
-// Design Pattern
+// Factory Pattern
 import java.util.List;
 import java.util.ArrayList;
 
-class Meal extends MealFactory {
+class Meal implements MealComponent {
     private String name;
-    private int fats;
-    private int carbs;
-    private int protein;
+
     private List<String> toppings;
     private double cost;
 
-    public Meal(String name, int fats, int carbs, int protein) {
+    public Meal(String name) {
         this.name = name;
-        this.fats = fats;
-        this.carbs = carbs;
-        this.protein = protein;
         this.toppings = new ArrayList<>();
     }
 
@@ -31,18 +26,6 @@ class Meal extends MealFactory {
         return name;
     }
 
-    public int getFats() {
-        return fats;
-    }
-
-    public int getCarbs() {
-        return carbs;
-    }
-
-    public int getProtein() {
-        return protein;
-    }
-
     public String itemDetail() {
         return String.format("%-20s %10.2f", name, this.getCost());
     }
@@ -50,4 +33,13 @@ class Meal extends MealFactory {
     public double getCost() {
         return cost;
     }
+
+    public void setCost(double c) {
+        this.cost = c;
+    }
+
+    public String mealDetail() {
+        return null;
+    }
+
 }
