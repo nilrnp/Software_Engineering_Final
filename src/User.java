@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 // Base class for users
 abstract class User {
@@ -12,6 +10,7 @@ abstract class User {
         this.address = address;
         this.county = county;
     }
+
     public String getName() {
         return name;
     }

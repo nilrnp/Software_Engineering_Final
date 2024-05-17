@@ -20,7 +20,7 @@ class Order {
         this.orderCreationTime = orderCreationTime;
     }
 
-    public void addMeal(Customer c, String dietPlan, int ToppingNum) {
+    public void addMeal(String dietPlan, int ToppingNum) {
         MealComponent m;
         switch (ToppingNum) {
             case 1:
