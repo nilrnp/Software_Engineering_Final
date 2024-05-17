@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Driver extends User {
-    private List<String> shiftOptions = new ArrayList<>(List.of("12:00AM - 8:00AM","8:00AM - 4:00PM","4:00PM - 12:00AM"));
+    private List<String> shiftOptions = new ArrayList<>(
+            List.of("12:00AM - 8:00PM", "8:00AM - 4:00PM", "4:00PM - 12:00AM"));
     private String shift;
     private List<Order> orders;
 
@@ -20,6 +21,15 @@ class Driver extends User {
     public List<Order> getOrders() {
 
         return orders;
+    }
+
+    public void update(Order order) {
+        orders.add(order);
+    }
+
+    public void updatePickedUp(Order order) {
+        if (orders.contains(order))
+            orders.remove(order);
     }
 
 }
