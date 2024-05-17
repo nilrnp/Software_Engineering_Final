@@ -12,4 +12,15 @@ abstract class User {
         this.address = address;
         this.county = county;
     }
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCounty() {
+        return county;
+    }
 }
